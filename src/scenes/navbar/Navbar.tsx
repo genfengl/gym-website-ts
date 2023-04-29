@@ -1,12 +1,13 @@
 // import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 // import { useState } from "react";
 // import useMediaQuery from "../../hooks/useMediaQuery";
-import { Bars3Icon } from "@heroicons/react/24/solid";
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import { MdWater } from "react-icons/md";
 import { SelectedPage } from "../../shared/types";
 import Link from "./Link";
 import { useState } from "react";
 import ActionButton from "../../shared/ActionButton";
+import Hamburger from "./Hamburger";
 
 type Props = {
   selectedPage: SelectedPage;
@@ -60,20 +61,47 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
                 </ActionButton>
               </div>
             </div>
-            {/* Mobile */}
-            <div className="md:hidden">
-              <button
-                className="rounded-full bg-secondary-500 p-2"
-                onClick={() => setShowMenu(!showMenu)}
-              >
-                <Bars3Icon className="h-6 w-6 text-white" />
-              </button>
+            {/* Right side: Mobile */}
+            <div className={`relative ${flexBetween} md:hidden`}>
+              <Hamburger showMenu={showMenu} setShowMenu={setShowMenu} />
             </div>
           </div>
         </div>
       </div>
       {/* Mobile Nav Sidebar */}
-      <div className="fixed bottom-0 right-0 z-40 h-full w-[300px]"></div>
+      <div
+        className={`fixed bottom-0 right-0 z-40 h-full w-[300px] bg-primary-100 drop-shadow-xl md:hidden 
+        ${showMenu ? "hidden" : "hidden"}`}
+      >
+        {/* Close Icon */}
+        <div className="flex justify-end p-12">
+          <button onClick={() => setShowMenu(!showMenu)}>
+            <XMarkIcon className="h-6 w-6 text-gray-400" />
+          </button>
+        </div>
+        <div className="ml-[33%] flex flex-col gap-10 text-2xl">
+          <Link
+            page="Home"
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+          <Link
+            page="Benefits"
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+          <Link
+            page="Our Classes"
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+          <Link
+            page="Contact Us"
+            selectedPage={selectedPage}
+            setSelectedPage={setSelectedPage}
+          />
+        </div>
+      </div>
     </nav>
   );
 };
