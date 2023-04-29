@@ -1,4 +1,5 @@
 import React from "react";
+import clsx from "clsx";
 
 type Props = {
   showMenu: boolean;
@@ -11,20 +12,28 @@ const Hamburger = ({ setShowMenu, showMenu }: Props) => {
   return (
     <button className="pb-1" onClick={() => setShowMenu(!showMenu)}>
       <div
-        className={`${hamburgerLines} 
-      ${showMenu ? "opacity-0" : "-translate-y-2 delay-500"}`}
+        className={clsx(
+          `${hamburgerLines}`,
+          `${showMenu ? "opacity-0" : "-translate-y-2 delay-500"}`
+        )}
       ></div>
       <div
-        className={`${hamburgerLines} 
-      ${showMenu ? "rotate-45 delay-500" : ""}`}
+        className={clsx(
+          `${hamburgerLines}`,
+          `${showMenu ? "rotate-45 delay-500" : ""}`
+        )}
       ></div>
       <div
-        className={`${hamburgerLines} 
-      ${showMenu ? "-rotate-45 delay-500" : ""}`}
+        className={clsx(
+          `${hamburgerLines}`,
+          `${showMenu ? "-rotate-45 delay-500" : ""}`
+        )}
       ></div>
       <div
-        className={`${hamburgerLines} 
-      ${showMenu ? "opacity-0" : "translate-y-2 delay-500"}`}
+        className={clsx(
+          `${hamburgerLines}`,
+          `${showMenu ? "opacity-0" : "translate-y-2 delay-500"}`
+        )}
       ></div>
     </button>
   );
