@@ -8,7 +8,7 @@ type Props = {
 
 const Hamburger = ({ setShowMenu, showMenu }: Props) => {
   const hamburgerLines =
-    "absolute h-1 w-6 bg-secondary-500 transition-all ease-in-out";
+    "absolute h-1 w-6 bg-secondary-500 transition-all ease-in-out -translate-x-3 ";
   return (
     <button className="pb-1" onClick={() => setShowMenu(!showMenu)}>
       <div
