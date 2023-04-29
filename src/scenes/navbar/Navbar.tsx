@@ -35,10 +35,18 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
               />
             </div>
             {/* Right side */}
+            {/* Right side: Mobile */}
+            {/* Hamburger Icon */}
+            <div
+              className={`relative flex h-12 w-12 items-center justify-center rounded-full bg-secondary-500 md:hidden`}
+            >
+              <Hamburger showMenu={showMenu} setShowMenu={setShowMenu} />
+            </div>
             {/* Right side: md or above */}
             <div
               className={`${flexCentered} hidden w-full justify-between md:flex`}
             >
+              {/* Anchor Links */}
               <div className={`${flexCentered} gap-8 text-sm`}>
                 <Link
                   page="Home"
@@ -61,19 +69,13 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
                   setSelectedPage={setSelectedPage}
                 />
               </div>
+              {/* Sign In and Register */}
               <div className={`${flexCentered} gap-8`}>
                 <div>Sign In</div>
                 <ActionButton setSelectedPage={setSelectedPage}>
                   Become A Member
                 </ActionButton>
               </div>
-            </div>
-            {/* Right side: Mobile */}
-            {/* Hamburger Icon */}
-            <div
-              className={`relative flex h-12 w-12 items-center justify-center rounded-full bg-secondary-500 md:hidden`}
-            >
-              <Hamburger showMenu={showMenu} setShowMenu={setShowMenu} />
             </div>
           </div>
         </div>
