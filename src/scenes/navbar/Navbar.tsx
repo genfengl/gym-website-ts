@@ -1,7 +1,6 @@
 // import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 // import { useState } from "react";
-// import useMediaQuery from "../../hooks/useMediaQuery";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
+// import useMediaQuery from "../../hooks/useMediaQuery"
 import { MdWater } from "react-icons/md";
 import { SelectedPage } from "../../shared/types";
 import Link from "./Link";
@@ -10,18 +9,22 @@ import ActionButton from "../../shared/ActionButton";
 import Hamburger from "./Hamburger";
 
 type Props = {
+  isTopOfPage: boolean;
   selectedPage: SelectedPage;
   setSelectedPage: (value: SelectedPage) => void;
 };
 
-const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
+const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexCentered = "flex items-center";
   // const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
 
   return (
     <nav>
-      <div className={`${flexCentered} fixed top-0 z-30 w-full py-6`}>
+      <div
+        className={`${navbarBackground} ${flexCentered} fixed top-0 z-30 w-full py-6`}
+      >
         <div className={`${flexCentered} mx-auto w-5/6`}>
           <div className={`${flexCentered} w-full justify-between gap-16`}>
             {/* Left side: Brand */}
@@ -66,8 +69,9 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
               </div>
             </div>
             {/* Right side: Mobile */}
+            {/* Hamburger Icon */}
             <div
-              className={`relative flex w-8 items-center justify-center md:hidden`}
+              className={`relative flex h-12 w-12 items-center justify-center rounded-full bg-secondary-500 md:hidden`}
             >
               <Hamburger showMenu={showMenu} setShowMenu={setShowMenu} />
             </div>
@@ -75,8 +79,9 @@ const Navbar = ({ selectedPage, setSelectedPage }: Props) => {
         </div>
       </div>
       {/* Mobile Nav Sidebar */}
+      {/* translate-y-24 to leave space the Navbar */}
       <div
-        className={`fixed bottom-0 z-40 h-full w-1/3 min-w-[300px] translate-y-20 bg-inherit
+        className={`fixed bottom-0 z-40 h-full w-1/3 min-w-[300px] translate-y-24 bg-inherit
          drop-shadow-xl transition-all duration-500 md:hidden
         ${showMenu ? "right-0" : "-right-full opacity-0"}`}
       >
