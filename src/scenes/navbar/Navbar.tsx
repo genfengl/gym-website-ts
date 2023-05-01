@@ -1,12 +1,13 @@
 // import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 // import { useState } from "react";
 // import useMediaQuery from "../../hooks/useMediaQuery"
-import { MdWater } from "react-icons/md";
+
 import { SelectedPage } from "../../shared/types";
 import AnchorLink from "./AnchorLink";
 import { useState } from "react";
 import ActionButton from "../../shared/ActionButton";
 import Hamburger from "./Hamburger";
+import Brand from "./Brand";
 
 type Props = {
   isTopOfPage: boolean;
@@ -28,12 +29,10 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
         <div className={`${flexCentered} mx-auto w-5/6`}>
           <div className={`${flexCentered} w-full justify-between gap-16`}>
             {/* Left side: Brand */}
-            <div className={`${flexCentered} gap-1 text-2xl font-bold`}>
-              <div className={`${flexCentered} text-2xl`}>EVOGYM</div>
-              <MdWater
-                className={`${flexCentered} text-3xl text-primary-500`}
-              />
-            </div>
+            <Brand
+              selectedPage={selectedPage}
+              setSelectedPage={setSelectedPage}
+            />
             {/* Right side */}
             {/* Right side: Mobile */}
             {/* Hamburger Icon */}
