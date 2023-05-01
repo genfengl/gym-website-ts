@@ -15,7 +15,7 @@ const ActionButton = ({ children, setSelectedPage }: Props) => {
       smooth={true}
       offset={50}
       duration={500}
-      className="cursor-pointer rounded-md bg-secondary-500 px-10 py-2 
+      className="cursor-pointer rounded-md bg-secondary-500 px-10 py-3 
       transition-all duration-300
       hover:bg-primary-500 hover:text-white"
       onClick={() => setSelectedPage(SelectedPage.ContactUs)}

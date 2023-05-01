@@ -5,6 +5,9 @@ import HomePageGraphic from "../../assets/HomePageGraphic.png";
 import SponsorRedBull from "../../assets/SponsorRedBull.png";
 import SponsorForbes from "../../assets/SponsorForbes.png";
 import SponsorFortune from "../../assets/SponsorFortune.png";
+import SponsorRunner from "../../assets/SponsorRunner.png";
+import SponsorZenYoga from "../../assets/SponsorZenYogo.png";
+import Sponsors from "./Sponsors";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -13,23 +16,34 @@ type Props = {
 const Home = ({ setSelectedPage }: Props) => {
   return (
     // section tag for semantics
-    <section id="home" className="mt-20 h-[calc(100vh-96px)] bg-gray-20 py-10">
+    <section
+      id="home"
+      className="grid min-h-[calc(100vh-96px)] translate-y-24 grid-rows-[1fr_auto] bg-gray-20"
+    >
       {/* SECTION CONTAINER */}
-      <div className="mx-auto flex w-5/6 flex-col justify-center gap-6 md:flex-row">
+      <div className="mx-auto flex w-5/6 items-center justify-center">
         {/* HEADER AND IMAGE CONTAINER */}
-        <div className="flex flex-col md:flex-row">
+        <div className="justify flex flex-col gap-12 md:flex-row md:gap-36">
           {/* HEADER AND ACTION BUTTONS */}
           <div className="flex flex-col gap-6 md:justify-center">
             {/* MAIN HEADER */}
             <div className="z-10 flex flex-col gap-1 font-montserrat">
               {/* HEADLINE */}
-              <div className="text-6xl font-extrabold xs:text-7xl">EVOGYM</div>
+              <div className="relative">
+                {/* evolvetext setup in tailwind.config */}
+                <div
+                  className="text-6xl font-extrabold before:absolute before:-left-24
+                before:-top-20 before:-z-10 xs:text-7xl md:before:content-evolvetext "
+                >
+                  EVOGYM
+                </div>
+              </div>
               {/* SUBHEAD */}
               <div className="text-2xl font-extralight xs:text-3xl">
                 Evolutionary Fitness.
               </div>
               {/* Paragraph */}
-              <p className="max-w-[550px] text-sm">
+              <p className="max-w-[600px] text-sm md:text-base">
                 Our gym offers top-notch facilities, experienced trainers, and a
                 welcoming atmosphere to help you achieve your fitness goals.
                 Join us now!
@@ -56,7 +70,7 @@ const Home = ({ setSelectedPage }: Props) => {
             </div>
           </div>
           {/* IMAGE */}
-          <div className="flex justify-center">
+          <div className="z-10 flex justify-center">
             <img
               src={HomePageGraphic}
               alt="homepage-graphic"
@@ -66,15 +80,7 @@ const Home = ({ setSelectedPage }: Props) => {
         </div>
       </div>
       {/* SPONSORS - only visible for md above */}
-      <div className="hidden md:flex">
-        <div>
-          <div className="flex gap-16">
-            <img src={SponsorRedBull} alt="redbull-sponsor" />
-            <img src={SponsorForbes} alt="forbes-sponsor" />
-            <img src={SponsorFortune} alt="fortune-sponsor" />
-          </div>
-        </div>
-      </div>
+      <Sponsors />
     </section>
   );
 };

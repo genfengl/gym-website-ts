@@ -34,7 +34,7 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {/* Right side: Mobile */}
             {/* Hamburger Icon */}
             <div
-              className={`relative flex h-6 w-6 items-center justify-center rounded-full
+              className={`relative flex h-12 w-12 items-center justify-center rounded-full
                md:hidden`}
             >
               <Hamburger showMenu={showMenu} setShowMenu={setShowMenu} />
