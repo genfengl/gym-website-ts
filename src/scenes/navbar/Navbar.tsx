@@ -3,7 +3,7 @@
 // import useMediaQuery from "../../hooks/useMediaQuery"
 import { MdWater } from "react-icons/md";
 import { SelectedPage } from "../../shared/types";
-import Link from "./Link";
+import AnchorLink from "./AnchorLink";
 import { useState } from "react";
 import ActionButton from "../../shared/ActionButton";
 import Hamburger from "./Hamburger";
@@ -38,7 +38,8 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             {/* Right side: Mobile */}
             {/* Hamburger Icon */}
             <div
-              className={`relative flex h-12 w-12 items-center justify-center rounded-full bg-secondary-500 md:hidden`}
+              className={`relative flex h-12 w-12 items-center justify-center rounded-full
+               md:hidden`}
             >
               <Hamburger showMenu={showMenu} setShowMenu={setShowMenu} />
             </div>
@@ -48,22 +49,22 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             >
               {/* Anchor Links */}
               <div className={`${flexCentered} gap-8 text-sm`}>
-                <Link
+                <AnchorLink
                   page="Home"
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
                 />
-                <Link
+                <AnchorLink
                   page="Benefits"
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
                 />
-                <Link
+                <AnchorLink
                   page="Our Classes"
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
                 />
-                <Link
+                <AnchorLink
                   page="Contact Us"
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
@@ -84,27 +85,28 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
       {/* translate-y-24 to leave space the Navbar */}
       <div
         className={`fixed bottom-0 z-40 h-full w-1/3 min-w-[300px] translate-y-24 bg-inherit
-         drop-shadow-xl transition-all duration-500 md:hidden
+         drop-shadow-xl transition-all duration-500 
+         md:hidden
         ${showMenu ? "right-0" : "-right-full opacity-0"}`}
       >
         {/* Anchor Links */}
         <div className="mx-auto flex flex-col gap-10 text-2xl">
-          <Link
+          <AnchorLink
             page="Home"
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
           />
-          <Link
+          <AnchorLink
             page="Benefits"
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
           />
-          <Link
+          <AnchorLink
             page="Our Classes"
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
           />
-          <Link
+          <AnchorLink
             page="Contact Us"
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}

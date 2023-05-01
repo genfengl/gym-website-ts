@@ -4,10 +4,11 @@ import { SelectedPage } from "./shared/types";
 
 function App() {
   const [selectedPage, setSelectedPage] = useState<SelectedPage>(
-    SelectedPage.Benefits
+    SelectedPage.Home
   );
   const [isTopOfPage, setIsTopOfPage] = useState<boolean>(true);
 
+  // useEffect for checking if the user is viewing the top of the page
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY === 0) {

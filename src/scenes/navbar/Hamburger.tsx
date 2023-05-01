@@ -1,4 +1,3 @@
-import React from "react";
 import clsx from "clsx";
 
 type Props = {
@@ -9,7 +8,7 @@ type Props = {
 const Hamburger = ({ setShowMenu, showMenu }: Props) => {
   // -translate-x-3 to make w-6 lines centered
   const hamburgerLines =
-    "absolute h-1 w-6 bg-gray-20 transition-all ease-in-out -translate-x-3 ";
+    "absolute h-1 w-6 bg-secondary-500 transition-all ease-in-out -translate-x-3 ";
   return (
     // pb-1 to compensate for the h-1 height of divs
     <button className="pb-1" onClick={() => setShowMenu(!showMenu)}>
