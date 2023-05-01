@@ -1,8 +1,6 @@
-import React from "react";
 import { SelectedPage } from "../../shared/types";
 import ActionButton from "../../shared/ActionButton";
 import { Link } from "react-scroll";
-import AnchorLink from "../navbar/AnchorLink";
 import HomePageGraphic from "../../assets/HomePageGraphic.png";
 import SponsorRedBull from "../../assets/SponsorRedBull.png";
 import SponsorForbes from "../../assets/SponsorForbes.png";
@@ -21,22 +19,24 @@ const Home = ({ setSelectedPage }: Props) => {
       md:h-full md:pb-0"
     >
       {/* IMAGE AND MAIN HEADER */}
-      <div className="mx-auto flex w-5/6 flex-col items-center justify-center gap-3 md:flex md:h-5/6">
+      <div className="mx-auto flex w-5/6 flex-col justify-center gap-6 md:flex md:h-5/6">
         {/* MAIN HEADER */}
-        <div className="z-10 font-montserrat md:basis-3/5">
+        <div className="z-10 flex flex-col gap-1 font-montserrat md:basis-3/5">
           {/* HEADLINE */}
-          <div className="text-7xl font-extrabold">EVOGYM</div>
+          <div className="text-6xl font-extrabold xs:text-7xl">EVOGYM</div>
           {/* SUBHEAD */}
-          <div className="text-3xl font-extralight">Evolutionary Fitness.</div>
+          <div className="text-2xl font-extralight xs:text-3xl">
+            Evolutionary Fitness.
+          </div>
           {/* Paragraph */}
-          <p className="text-sm">
+          <p className="max-w-[550px] text-sm">
             Our gym offers top-notch facilities, experienced trainers, and a
             welcoming atmosphere to help you achieve your fitness goals. Join us
             now!
           </p>
         </div>
         {/* ACTIONS */}
-        <div className="flex items-center">
+        <div className="flex items-center gap-3">
           <ActionButton setSelectedPage={setSelectedPage}>
             Join Now
           </ActionButton>
