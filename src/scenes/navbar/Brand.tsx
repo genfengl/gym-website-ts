@@ -20,7 +20,9 @@ const Brand = ({ setSelectedPage }: Props) => {
       className="cursor-pointer"
     >
       <div className={`${flexCentered} gap-1 text-2xl font-bold`}>
-        <div className={`${flexCentered} text-2xl`}>EVOGYM</div>
+        <div className={`${flexCentered} font-montserrat text-2xl font-bold`}>
+          EVOGYM
+        </div>
         <MdWater className={`${flexCentered} text-3xl text-primary-500`} />
       </div>
     </Link>
