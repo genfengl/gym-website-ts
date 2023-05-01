@@ -1,6 +1,7 @@
 import { MdWater } from "react-icons/md";
 import { Link } from "react-scroll";
 import { SelectedPage } from "../../shared/types";
+import BrandImg from "../../assets/Brand.png";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -19,11 +20,11 @@ const Brand = ({ setSelectedPage }: Props) => {
       onClick={() => setSelectedPage(SelectedPage.Home)}
       className="cursor-pointer"
     >
-      <div className={`${flexCentered} gap-1 text-2xl font-bold`}>
-        <div className={`${flexCentered} font-montserrat text-2xl font-bold`}>
-          EVOGYM
+      <div className={`${flexCentered} gap-1`}>
+        <img src={BrandImg} alt="Brand" className="h-6" />
+        <div className="">
+          <MdWater className={`${flexCentered} text-3xl text-primary-500`} />
         </div>
-        <MdWater className={`${flexCentered} text-3xl text-primary-500`} />
       </div>
     </Link>
   );

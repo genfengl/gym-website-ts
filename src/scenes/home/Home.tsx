@@ -3,6 +3,7 @@ import ActionButton from "../../shared/ActionButton";
 import { Link } from "react-scroll";
 import HomePageGraphic from "../../assets/HomePageGraphic.png";
 import Sponsors from "./Sponsors";
+import { motion } from "framer-motion";
 
 type Props = {
   setSelectedPage: (value: SelectedPage) => void;
@@ -19,11 +20,24 @@ const Home = ({ setSelectedPage }: Props) => {
       {/* SECTION CONTAINER */}
       <div className="mx-auto flex w-5/6 items-center justify-center py-12">
         {/* HEADER AND IMAGE CONTAINER */}
-        <div className="flex flex-col gap-12 md:flex-row md:gap-36">
-          {/* HEADER AND ACTION BUTTONS */}
-          <div className="flex flex-col gap-6 md:justify-center">
-            {/* MAIN HEADER */}
-            <div className="z-10 flex flex-col gap-1 font-montserrat">
+        <motion.div
+          className="flex flex-col gap-12 md:flex-row md:gap-24"
+          onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
+        >
+          {/* HEADLINE AND ACTION BUTTONS */}
+          <motion.div
+            className="flex flex-col gap-6 md:justify-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            variants={{
+              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, x: 0 },
+            }}
+          >
+            {/* MAIN HEADER AND DISCRIPTION */}
+            <div className="z-10 flex flex-col gap-3 font-montserrat">
               {/* HEADLINE */}
               <div className="relative">
                 {/* evolvetext setup in tailwind.config */}
@@ -33,10 +47,10 @@ const Home = ({ setSelectedPage }: Props) => {
                 >
                   EVOGYM
                 </div>
-              </div>
-              {/* SUBHEAD */}
-              <div className="text-2xl font-extralight xs:text-3xl md:text-4xl">
-                Evolutionary Fitness.
+                {/* SUBHEAD */}
+                <div className="text-2xl font-extralight xs:text-3xl md:text-4xl">
+                  Evolutionary Fitness.
+                </div>
               </div>
               {/* Paragraph */}
               <p className="max-w-[600px] text-sm sm:text-base md:text-lg">
@@ -46,7 +60,7 @@ const Home = ({ setSelectedPage }: Props) => {
               </p>
             </div>
             {/* ACTION BUTTONS */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-6">
               {/* JOIN NOW */}
               <ActionButton setSelectedPage={setSelectedPage}>
                 Join Now
@@ -64,7 +78,7 @@ const Home = ({ setSelectedPage }: Props) => {
                 <p>Learn More</p>
               </Link>
             </div>
-          </div>
+          </motion.div>
           {/* IMAGE */}
           <div className="z-10 flex basis-3/4 justify-center ">
             <img
@@ -73,7 +87,7 @@ const Home = ({ setSelectedPage }: Props) => {
               className="object-contain"
             />
           </div>
-        </div>
+        </motion.div>
       </div>
       {/* SPONSORS - only visible for md above */}
       <Sponsors />
