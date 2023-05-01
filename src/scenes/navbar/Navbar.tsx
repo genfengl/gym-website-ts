@@ -19,25 +19,22 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
   const flexCentered = "flex items-center";
   // const isAboveMediumScreens = useMediaQuery("(min-width: 1060px)");
   const [showMenu, setShowMenu] = useState<boolean>(false);
-  const navbarBackground = isTopOfPage ? "" : "bg-primary-100 drop-shadow";
+  const navbarBackground = isTopOfPage ? "" : "bg-white drop-shadow";
 
   return (
     <nav>
       <div
-        className={`${navbarBackground} ${flexCentered} fixed top-0 z-30 w-full py-6`}
+        className={`${navbarBackground} ${flexCentered} fixed top-0 z-30 w-full bg-gray-20 py-6`}
       >
         <div className={`${flexCentered} mx-auto w-5/6`}>
           <div className={`${flexCentered} w-full justify-between gap-16`}>
             {/* Left side: Brand */}
-            <Brand
-              selectedPage={selectedPage}
-              setSelectedPage={setSelectedPage}
-            />
+            <Brand setSelectedPage={setSelectedPage} />
             {/* Right side */}
             {/* Right side: Mobile */}
             {/* Hamburger Icon */}
             <div
-              className={`relative flex h-12 w-12 items-center justify-center rounded-full
+              className={`relative flex h-6 w-6 items-center justify-center rounded-full
                md:hidden`}
             >
               <Hamburger showMenu={showMenu} setShowMenu={setShowMenu} />

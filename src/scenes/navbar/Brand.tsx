@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { SelectedPage } from "../../shared/types";
 
 type Props = {
-  setSelectedPage: (value: string) => void;
+  setSelectedPage: (value: SelectedPage) => void;
 };
 
 const Brand = ({ setSelectedPage }: Props) => {
