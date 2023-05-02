@@ -15,7 +15,7 @@ const Home = ({ setSelectedPage }: Props) => {
     <section
       id="home"
       // set the height to offset the height of nav and fill the rest of the screen
-      className="grid min-h-[calc(100vh-96px)] translate-y-24 grid-rows-[1fr_auto] bg-gray-20"
+      className=" grid min-h-[calc(100vh-96px)] translate-y-24 grid-rows-[1fr_auto] bg-gray-20"
     >
       {/* SECTION CONTAINER */}
       <div className="mx-auto flex w-5/6 items-center justify-center py-12">
@@ -30,9 +30,9 @@ const Home = ({ setSelectedPage }: Props) => {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
             variants={{
-              hidden: { opacity: 0, x: -100 },
+              hidden: { opacity: 0, x: -200 },
               visible: { opacity: 1, x: 0 },
             }}
           >
