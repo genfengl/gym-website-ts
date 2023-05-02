@@ -49,7 +49,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
     // translate-y-24 to compensate for the navbar and translate-y-24 in the Home component
     <section
       id="benefits"
-      className="mx-auto min-h-full w-5/6 translate-y-24 py-12"
+      className="mx-auto min-h-full w-5/6 translate-y-24 py-24"
     >
       {/* CONTAINER: BENEFITS HEADER AND CARDS */}
       <motion.div

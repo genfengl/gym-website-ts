@@ -13,11 +13,12 @@ const AnchorLink = ({ page, selectedPage, setSelectedPage }: Props) => {
 
   return (
     <Link
-      to={`#${lowerCasePage}`}
+      activeClass="active"
+      to={`${lowerCasePage}`}
       spy={true}
       smooth={true}
-      offset={50}
-      duration={500}
+      offset={-96}
+      duration={800}
       className={`${selectedPage === lowerCasePage ? "text-primary-500" : ""}
     cursor-pointer transition duration-500
      hover:text-primary-300`}

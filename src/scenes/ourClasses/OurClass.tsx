@@ -14,6 +14,7 @@ const OurClass = ({ title, description, image }: Props) => {
   opacity-0 transition duration-500 hover:opacity-90`;
   return (
     <li className="relative aspect-square w-[360px]">
+      {/* overlay shows up at 90% opacity on hover */}
       <div className={overlayStyles}>
         <div className="font-montserrat text-3xl font-bold">{title}</div>
         <div>{description}</div>

@@ -55,7 +55,10 @@ type Props = {
 
 const OurClasses = ({ setSelectedPage }: Props) => {
   return (
-    <section className="w-full translate-y-24 bg-primary-500 py-12">
+    <section
+      id="ourclasses"
+      className="w-full translate-y-24 bg-primary-500 py-24"
+    >
       {/* CONTAINER: HEADER AND SIDE-SCROLLER */}
       <motion.div
         className="flex flex-col gap-12"
