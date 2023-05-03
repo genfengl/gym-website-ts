@@ -1,7 +1,5 @@
-import React from "react";
-import Brand from "../navbar/Brand";
 import BrandImg from "../../assets/Brand.png";
-import { MdFacebook, MdWater } from "react-icons/md";
+import { MdWater } from "react-icons/md";
 import {
   FaFacebookSquare,
   FaInstagramSquare,

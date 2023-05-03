@@ -1,4 +1,3 @@
-import React from "react";
 import { OurClassesType, SelectedPage } from "../../shared/types";
 import OurClassesImage1 from "../../assets/OurClassesImage1.jpg";
 import OurClassesImage2 from "../../assets/OurClassesImage2.jpg";

@@ -1,5 +1,3 @@
-import OurClassesImage1 from "../../assets/OurClassesImage1.jpg";
-
 type Props = {
   title: string;
   description: string;

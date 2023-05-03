@@ -1,7 +1,3 @@
-// import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
-// import { useState } from "react";
-// import useMediaQuery from "../../hooks/useMediaQuery"
-
 import { SelectedPage } from "../../shared/types";
 import NavLink from "./NavLink";
 import { useState } from "react";
