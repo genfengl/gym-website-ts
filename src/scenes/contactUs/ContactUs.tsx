@@ -152,7 +152,8 @@ const ContactUs = ({ setSelectedPage }: Props) => {
           </motion.div>
           {/* IMAGE */}
           <motion.div
-            className="relative h-[451px] md:basis-2/5"
+            // h-[451px] so that the image and form have same height
+            className="relative md:h-[451px] md:basis-2/5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
