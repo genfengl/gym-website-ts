@@ -10,7 +10,7 @@ type Props = {
 const ActionButton = ({ children, setSelectedPage }: Props) => {
   return (
     <Link
-      to={`#${SelectedPage.ContactUs}`}
+      to={`${SelectedPage.ContactUs}`}
       spy={true}
       smooth={true}
       offset={50}
