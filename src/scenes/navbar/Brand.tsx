@@ -15,7 +15,7 @@ const Brand = ({ setSelectedPage }: Props) => {
       to={`${SelectedPage.Home}`}
       spy={true}
       smooth={true}
-      offset={50}
+      offset={-96}
       duration={500}
       onClick={() => setSelectedPage(SelectedPage.Home)}
       className="cursor-pointer"

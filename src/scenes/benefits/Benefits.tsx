@@ -48,7 +48,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
   return (
     // translate-y-24 to compensate for the navbar and translate-y-24 in the Home component
     <section
-      id="benefits"
+      id={SelectedPage.Benefits}
       className="mx-auto min-h-full w-5/6 translate-y-24 py-24"
     >
       {/* CONTAINER: BENEFITS HEADER AND CARDS */}
@@ -66,7 +66,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             variants={{
-              hidden: { opacity: 0, x: -200 },
+              hidden: { opacity: 0, x: -150 },
               visible: { opacity: 1, x: 0 },
             }}
           >

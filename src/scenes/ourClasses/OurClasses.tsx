@@ -56,7 +56,7 @@ type Props = {
 const OurClasses = ({ setSelectedPage }: Props) => {
   return (
     <section
-      id="ourclasses"
+      id={SelectedPage.OurClasses}
       className="w-full translate-y-24 bg-primary-500 py-24"
     >
       {/* CONTAINER: HEADER AND SIDE-SCROLLER */}
@@ -72,7 +72,7 @@ const OurClasses = ({ setSelectedPage }: Props) => {
           viewport={{ once: true, amount: 0.5 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           variants={{
-            hidden: { opacity: 0, x: -200 },
+            hidden: { opacity: 0, x: -150 },
             visible: { opacity: 1, x: 0 },
           }}
         >
@@ -94,6 +94,7 @@ const OurClasses = ({ setSelectedPage }: Props) => {
           {/* Set the width of inner div to be larger than outer parent to activate horizontal scroll */}
           {/* w-2200px = images: 6*360px  + gaps: 5*24px */}
           <ul className="flex w-[2280px] gap-6">
+            {/* Use map for repeated element */}
             {ourClasses.map((item: OurClassesType, index) => {
               return (
                 <OurClass
