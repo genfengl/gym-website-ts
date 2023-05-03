@@ -17,6 +17,8 @@ const NavLink = ({
 }: Props) => {
   // remove spaces within the string using replace() and regex
   const lowerCasePage = page.toLowerCase().replace(/ /g, "") as SelectedPage;
+
+  // combine two functions to call for onClick
   const onNavLinkClick = () => {
     setSelectedPage(lowerCasePage);
     setShowMenu(false);
