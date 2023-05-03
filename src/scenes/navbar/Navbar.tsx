@@ -3,7 +3,7 @@
 // import useMediaQuery from "../../hooks/useMediaQuery"
 
 import { SelectedPage } from "../../shared/types";
-import AnchorLink from "./AnchorLink";
+import NavLink from "./NavLink";
 import { useState } from "react";
 import ActionButton from "../../shared/ActionButton";
 import Hamburger from "./Hamburger";
@@ -45,25 +45,29 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
             >
               {/* Anchor Links */}
               <div className={`${flexCentered} gap-8 text-sm`}>
-                <AnchorLink
+                <NavLink
                   page="Home"
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
+                  setShowMenu={setShowMenu}
                 />
-                <AnchorLink
+                <NavLink
                   page="Benefits"
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
+                  setShowMenu={setShowMenu}
                 />
-                <AnchorLink
+                <NavLink
                   page="Our Classes"
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
+                  setShowMenu={setShowMenu}
                 />
-                <AnchorLink
+                <NavLink
                   page="Contact Us"
                   selectedPage={selectedPage}
                   setSelectedPage={setSelectedPage}
+                  setShowMenu={setShowMenu}
                 />
               </div>
               {/* Sign In and Register */}
@@ -80,32 +84,38 @@ const Navbar = ({ isTopOfPage, selectedPage, setSelectedPage }: Props) => {
       {/* Mobile Nav Sidebar */}
       {/* translate-y-24 to leave space the Navbar */}
       <div
-        className={`fixed bottom-0 z-40 h-full w-1/3 min-w-[300px] translate-y-24 bg-inherit
+        className={`fixed bottom-0 z-40 h-full w-full min-w-[300px] translate-y-24 bg-gray-20
          drop-shadow-xl transition-all duration-500 
          md:hidden
-        ${showMenu ? "right-0" : "-right-full opacity-0"}`}
+        ${showMenu ? "right-0" : "-right-full opacity-0"}
+        ${navbarBackground}`}
       >
         {/* Anchor Links */}
-        <div className="mx-auto flex flex-col gap-10 text-2xl">
-          <AnchorLink
+        <div className="mx-auto mt-12 flex w-5/6 flex-col gap-10 text-2xl">
+          <NavLink
             page="Home"
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
+            setShowMenu={setShowMenu}
           />
-          <AnchorLink
+
+          <NavLink
             page="Benefits"
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
+            setShowMenu={setShowMenu}
           />
-          <AnchorLink
+          <NavLink
             page="Our Classes"
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
+            setShowMenu={setShowMenu}
           />
-          <AnchorLink
+          <NavLink
             page="Contact Us"
             selectedPage={selectedPage}
             setSelectedPage={setSelectedPage}
+            setShowMenu={setShowMenu}
           />
         </div>
       </div>

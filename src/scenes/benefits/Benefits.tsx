@@ -60,7 +60,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
         <div className="flex flex-col gap-6">
           {/* HEADER */}
           <motion.div
-            className="flex flex-col gap-2 md:w-3/5"
+            className="flex flex-col gap-3 md:w-3/5"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
@@ -82,7 +82,7 @@ const Benefits = ({ setSelectedPage }: Props) => {
             className="flex flex-col gap-6 md:flex-row"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.2 }}
             // assign the container variant to this container of all the BenefitCards
             variants={container}
           >
@@ -101,18 +101,18 @@ const Benefits = ({ setSelectedPage }: Props) => {
         {/* GRAPHICS AND DESCRIPTION*/}
         <div className="flex flex-col gap-16 md:flex-row md:items-center">
           {/* GRAPHIC */}
-          <div className="flex md:w-3/5">
+          <div className="flex md:w-1/2">
             <img src={BenefitsPageModel} alt="benefits-page-model" />
           </div>
           {/* TEXT DESCRIPTION WITH ACTION BUTTON */}
           <motion.div
-            className="relative flex flex-col gap-6 md:w-2/5"
+            className="relative flex flex-col gap-6 md:basis-1/2"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             transition={{ duration: 0.8, delay: 0.2 }}
             variants={{
-              hidden: { opacity: 0, x: 200 },
+              hidden: { opacity: 0, x: -120 },
               visible: { opacity: 1, x: 0 },
             }}
           >
