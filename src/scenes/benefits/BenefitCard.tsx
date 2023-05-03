@@ -1,4 +1,3 @@
-import React from "react";
 import { SelectedPage } from "../../shared/types";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";

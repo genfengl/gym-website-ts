@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { SelectedPage } from "../../shared/types";
 import { motion } from "framer-motion";
 import SectionHeading from "../../shared/SectionHeading";
